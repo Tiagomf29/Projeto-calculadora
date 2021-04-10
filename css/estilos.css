@@ -1,0 +1,70 @@
+#hora{
+    position: absolute;
+}
+
+#data{
+  position: absolute;
+  left: 718px;  
+}
+
+#calc {
+                
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+#geral {
+    
+    width: 25%;
+    height: 75%;
+    margin: 0 auto;
+}
+td, tr {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 80px;
+    height: 80px;
+}
+td {
+    box-shadow: 5px 3px 3px darkgray;
+}
+
+td:hover{
+    background-color: yellow;
+}
+
+#formulario {
+    width: 100%;
+    height: 100%; 
+    color: red; 
+    font-size: 20px;  
+    position: relative;    
+}
+#igual {
+    background-color: gray;
+}
+#head {
+    margin: 0 auto;
+    text-align: center;
+}
+#l1,#l2,#l3,#n0 {
+    background-color: rgb(167, 213, 231);
+}
+#l4,#l5 {
+    background-color: rgb(13, 101, 141);
+    color: white;
+}
+#ponto,#virg {
+    background-color: rgb(13, 101, 141);
+    color: white;
+}
+@media only screen and  (max-width:400px){
+    input{background-color: yellow;}
+    
+    table  {width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;            
+    }
+
+}

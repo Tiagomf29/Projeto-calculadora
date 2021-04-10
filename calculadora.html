@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Calculadora</title>
+        <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+    </head>     
+    <body>
+        <h3 id="head">Calculadora</h3>
+        <div id="geral">
+            <table id="calc" cellspacing="5px">
+                <tr>
+                    <td colspan="4"><span id="hora">Hora</span></span><input id="formulario" value="000" type="text" disabled="disabled"/><span id="data">Data</span></td>
+                </tr>
+                <tr id="l5">
+                    <td class="ln-percentual">%</td><td class="ln-CE">CE</td><td class="ln-C">C</td><td class="ln-backspace"><=</td>
+                </tr>
+                <tr id="l4">
+                    <td class="ln-multiplicacao">x</td><td class="ln-divisao">/</td><td class="ln-subtracao">-</td><td class="ln-adicao">+</td>
+                </tr>
+                <tr id="l3">
+                    <td class="ln-7">7</td><td class="ln-8">8</td><td class="ln-9">9</td><td class="ln-igual" id="igual" rowspan="4">=</td>
+                </tr>
+                <tr id="l2">
+                    <td class="ln-4">4</td><td class="ln-5">5</td><td class="ln-6">6</td>
+                </tr>
+                <tr id="l1">
+                    <td class="ln-1">1</td><td class="ln-2">2</td><td class="ln-3">3</td>
+                </tr>
+                <tr>
+                    <td class="ln-ponto" id="ponto">.</td><td class="ln-0" id="n0">0</td><td class="ln-virgula" id="virg">,</td>
+                </tr>
+            </table>
+        </div>
+        <script type="text/javascript" src="js/CalcController.js"></script>
+        <script type="text/javascript" src="js/scripts.js"></script>        
+    </body>    
+    
+</html>
