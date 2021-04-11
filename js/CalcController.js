@@ -1,8 +1,12 @@
+var vlrdisplay = 0;
+var vlrAnterior = "" ;
+
 class CalcController{
 
     constructor(){
 
         this._visor = document.querySelector("#formulario");
+        this._visor2 = document.querySelector("#formulario2");
         this._data = document.querySelector("#data");
         this._hora = document.querySelector("#hora"); 
         
@@ -45,8 +49,7 @@ class CalcController{
         //let eventos =["drag","mouseouver"];
         let eventos = ["click"];
         var valor = window.document.querySelectorAll("td");
-        var resultado = window.document.getElementById("formulario");
-        var vlrAnterior = "" ;
+        var resultado = window.document.getElementById("formulario");        
     
           valor.forEach((btn)=> {           
 
@@ -54,9 +57,9 @@ class CalcController{
                 btn.addEventListener(evento, e =>{
                     let vTecla =  btn.className.replace("ln-","");
                     var vlr = this.validaTeclas(vTecla);
-                    if(vlr != ""){
+                    if(vlr != "" && vlr !="X"){
                         this.displayCalc = vlrAnterior + vlr;
-                        vlrAnterior = this._visor.value;                        
+                        vlrAnterior = this._visor.innerHTML;                        
                     }else{
                         vlrAnterior="";
                     }
@@ -82,7 +85,19 @@ class CalcController{
                 break;                
             case "igual": return "=";                
                 break;                
-            case "multiplicacao": return "X";                
+            case "multiplicacao": 
+                    vlrdisplay = this._visor.innerHTML;
+                    if (this._visor2.innerHTML !=""){
+                        
+                        this._visor2.innerHTML = +this._visor2.innerHTML.replace(" x","") * +vlrdisplay ;                                    
+                    }else{
+                    this._visor2.innerHTML =  +this._visor2.innerHTML + vlrdisplay+ ' x';
+                    }
+                    this._visor.innerHTML = ""; 
+                    vlrAnterior = "";
+            
+                   
+                  return 'X';                
                 break;                
             case "divisao": return "/";                
                 break;                              
@@ -102,12 +117,14 @@ class CalcController{
 
     }
 
+
+
     get displayCalc(){
-        return this._visor.value;
+        return this._visor.innerHTML;
     }
 
     set displayCalc(valor){
-        this._visor.value = valor;
+        this._visor.innerHTML = valor;
     }
 
     get currentDate(){       
